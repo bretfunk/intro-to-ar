@@ -3,4 +3,9 @@ class HorseApp < Sinatra::Base
     @horses = Horse.all
     erb :"horses/index"
   end
+
+  get '/jockey/:id' do
+  @jockey = Jockey.find(params[:id])
+  erb :show
+  end
 end

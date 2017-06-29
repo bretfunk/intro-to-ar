@@ -1,0 +1,9 @@
+<h1><%= @jockey.name %>'s Horses</h1>
+<% @jockey.horses.each do |horse| %>
+<h3><%= horse.name %></h3>
+<h3>Total Winnings: $<%= Horse.sum("total_winnings") %><br/>
+  <h3>AVG Winnings: %<%=
+Horse.average("total_winnings").to_i.round(2)%></h3>
+
+
+<% end %>
